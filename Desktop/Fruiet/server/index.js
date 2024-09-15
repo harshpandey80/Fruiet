@@ -6,6 +6,8 @@ const chatbot = require('./routes/chatbot')
 const faqroute = require("./routes/faqroutes")
 const userRoutes = require("./routes/userroutes")
 const translateText = require('./routes/translator')
+require('dotenv').config();
+
 
 
 const app = express();
