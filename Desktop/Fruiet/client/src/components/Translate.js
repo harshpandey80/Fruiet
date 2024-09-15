@@ -12,7 +12,7 @@ const Translator = () => {
     setError('');
     
     try {
-      const response = await fetch('http://localhost:2000/api/user/translate', {
+      const response = await fetch('https://fruiet-2.onrender.com/api/user/translate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
