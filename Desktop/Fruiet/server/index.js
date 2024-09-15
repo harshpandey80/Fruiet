@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const dbConnect = require('./config/dbConnect'); // Adjust path as needed
+const connectDB = require('./config/dbConnect'); // Adjust path as needed
 const faqroute = require("./routes/faqroutes")
 const app = express();
 
 // Connect to MongoDB
-dbConnect();
+connectDB();
 const userRoutes = require("./routes/userroutes")
 // Middleware
 app.use(cors()); // Enable CORS for all routes
