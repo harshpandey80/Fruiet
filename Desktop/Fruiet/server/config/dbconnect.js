@@ -1,21 +1,18 @@
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-
-// Load environment variables from .env file
-dotenv.config();
-
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+const mongoose = require("mongoose");
+require("dotenv").config();
+const dbConnect = async () => {
+  mongoose
+    .connect(process.env.MONGO_URI, {})
+    .then(() => {
+      console.log("database connected successfully");
+    })
+    .catch((error) => {
+      console.log("Issue in DB Connetion");
+      console.error(error.message);
+      //iska matlab kya h ?
+      process.exit(1);
     });
-
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`Error: ${error.message}`);
-    process.exit(1); // Exit with failure
-  }
 };
+module.exports = dbConnect;
 
-module.exports = connectDB;
+// this function is for connecting the database to backend;
