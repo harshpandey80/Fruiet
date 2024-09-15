@@ -13,7 +13,7 @@ const Chatbot = () => {
     setMessages((prevMessages) => [...prevMessages, userMessage]);
 
     try {
-      const response = await axios.post('http://localhost:2000/api/user/ask', {
+      const response = await axios.post('https://fruiet-2.onrender.com/api/user/ask', {
         message: input,
       });
 
