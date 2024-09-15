@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const connectDB = require('./config/dbConnect'); // Adjust path as needed
+const connectDB = require('./config/dbconnect'); // Adjust path as needed Desktop/Fruiet/server/config/dbconnect.js
 const faqroute = require("./routes/faqroutes")
 const app = express();
 
